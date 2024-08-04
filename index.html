@@ -21,13 +21,13 @@
 </header>
 <form id="signup-form" method="post">
 <input type="url" name="targetUrl" id="targetUrl" placeholder="需要生成的网址" onkeydown="HandleKeyDown(event)"/>
-<select name="type" class="btn-default form-control" style="width: auto; cursor: pointer;" title="点击选择生成接口" id="type" onchange="var back = this.options[this.selectedIndex].hasAttribute('back'); if(back){var fhLink = document.createElement('a');fhLink.href = 'javascript:history.back()';fhLink.textContent = '点击返回主页';document.getElementById('generatedUrl').textContent = '';document.getElementById('generatedUrl').appendChild(fhLink);window.history.back();}">
+<select name="type" class="btn-default form-control" style="width: auto; cursor: pointer;" title="点击选择生成接口" id="type" onchange="var url=this.options[this.selectedIndex].getAttribute('back'); if(url){var fhLink = document.createElement('a');fhLink.href = url;fhLink.textContent = '点击返回主页';document.getElementById('generatedUrl').textContent = '';document.getElementById('generatedUrl').appendChild(fhLink);window.location.href=url;}">
 <option>选择接口...</option>
 <option value="ALL_OPEN">通用一次性直链打开</option>
 <option value="ALL_JUMP">通用一次性跳浏览器</option>
 <option value="GET_QR">网址转二维码在线生成</option>
 <option value="Custom">定制防红请进群申请</option>
-<option back>点击返回主页</option>
+<option back="https://fanghong.zeabur.app">点击返回主页</option>
 </select>
 <input type="button" id="button" value="生成" onclick="get_fhUrl()" />
 </form>
