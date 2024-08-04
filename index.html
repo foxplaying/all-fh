@@ -21,7 +21,7 @@
 </header>
 <form id="signup-form" method="post">
 <input type="url" name="targetUrl" id="targetUrl" placeholder="需要生成的网址" onkeydown="HandleKeyDown(event)"/>
-<select name="type" class="btn-default form-control" style="width: auto; cursor: pointer;" title="点击选择生成接口" id="type" onchange="var back = selectElement.options[selectElement.selectedIndex].hasAttribute('back'); if(back){var fhLink = document.createElement('a');fhLink.href = 'javascript:history.back()';;fhLink.textContent = '点击返回主页';document.getElementById('generatedUrl').textContent = '';document.getElementById('generatedUrl').appendChild(fhLink);window.history.back();}">
+<select name="type" class="btn-default form-control" style="width: auto; cursor: pointer;" title="点击选择生成接口" id="type" onchange="var back = this.options[this.selectedIndex].hasAttribute('back'); if(back){var fhLink = document.createElement('a');fhLink.href = 'javascript:history.back()';fhLink.textContent = '点击返回主页';document.getElementById('generatedUrl').textContent = '';document.getElementById('generatedUrl').appendChild(fhLink);window.history.back();}">
 <option>选择接口...</option>
 <option value="ALL_OPEN">通用一次性直链打开</option>
 <option value="ALL_JUMP">通用一次性跳浏览器</option>
